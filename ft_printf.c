@@ -6,7 +6,7 @@
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:41:13 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/22 09:23:01 by akumari          ###   ########.fr       */
+/*   Updated: 2024/11/22 10:53:03 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,3 @@ int	ft_printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
-
-// int	main(void)
-// {
-// 	char ch = 'a';
-// 	ft_printf("%c\n", ch);
-// 	char *str = "akancha";
-// 	ft_printf("%s\n", str);
-// 	int num = -5326626;
-// 	ft_printf("%d\n", num);
-// 	ft_printf("%i\n", num);
-// 	char *ptr = "10";
-// 	ft_printf("%p\n", &ptr); // 0x16f21f5f0
-// 	ft_printf("%u\n", num);
-// 	unsigned int val = 7685;
-// 	ft_printf("%x\n", val); // 1e05
-// 	ft_printf("%X\n", val); // 1E05
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:21:10 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/22 09:12:35 by akumari          ###   ########.fr       */
+/*   Updated: 2024/11/22 10:52:05 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,17 @@ void	ft_putstr(char *str, int *count)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if(!str)
 	{
-		write(1, &str[i], 1);
-		i++;
-		(*count)++;
+		ft_putstr("(null)", count);
+	}
+	else
+	{
+		while (str[i] != '\0')
+		{
+			write(1, &str[i], 1);
+			i++;
+			(*count)++;
+		}
 	}
 }

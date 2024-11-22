@@ -6,7 +6,7 @@
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:50:41 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/22 09:11:02 by akumari          ###   ########.fr       */
+/*   Updated: 2024/11/22 10:32:31 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 int		ft_printf(const char *format, ...);
 void	ft_putunbr(unsigned int nbr, int *count);

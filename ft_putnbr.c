@@ -6,7 +6,7 @@
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:33:21 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/22 09:11:58 by akumari          ###   ########.fr       */
+/*   Updated: 2024/11/22 10:59:13 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 
 void	ft_putnbr(int num, int *count)
 {
-	if (num == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (num < 0)
+	long	nbr;
+
+	nbr = num;
+	if (nbr < 0)
 	{
 		ft_putchar('-', count);
-		num = -num;
-		ft_putnbr(num, count);
+		nbr = -nbr;
 	}
-	else if (num > 9)
-	{
-		ft_putnbr(num / 10, count);
-		ft_putnbr(num % 10, count);
-	}
-	else
-		ft_putchar(num + 48, count);
+	if (nbr > 9)
+		ft_putnbr(nbr / 10, count);
+	ft_putchar(nbr % 10 + '0', count);
 }

@@ -6,7 +6,7 @@
 #    By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/15 12:50:45 by akumari           #+#    #+#              #
-#    Updated: 2024/11/22 09:19:33 by akumari          ###   ########.fr        #
+#    Updated: 2024/11/22 09:38:46 by akumari          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,15 +25,13 @@ RM = rm -rf
 
 LIBC = ar rcs
 
-HEADER	= ft_printf.h
-
 all: $(NAME) 
 
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) -c $(SRCS) -I ./
 	$(LIBC) $(NAME) $(OBJS)
 
-%.o: %.c $(HEADER)
+%.o: %.c 
 	$(CC) -c $(CFLAGS) $<
 
 clean:
@@ -43,3 +41,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

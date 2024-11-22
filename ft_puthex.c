@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhex.c                                      :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:17:24 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/22 09:11:23 by akumari          ###   ########.fr       */
+/*   Updated: 2024/11/22 11:19:25 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_puthex(unsigned long num, int format, int *count)
 {
-	int		value;
 	char	*hex;
 
-	value = 0;
 	if (num > 15)
 	{
 		ft_puthex(num / 16, format, count);
@@ -25,15 +23,13 @@ void	ft_puthex(unsigned long num, int format, int *count)
 	if (format == 'x')
 	{
 		hex = "0123456789abcdef";
-		value = num % 16;
-		write(1, &hex[value], 1);
+		write(1, &hex[num % 16], 1);
 		(*count)++;
 	}
 	else
 	{
 		hex = "0123456789ABCDEF";
-		value = num % 16;
-		write(1, &hex[value], 1);
+		write(1, &hex[num % 16], 1);
 		(*count)++;
 	}
 }
