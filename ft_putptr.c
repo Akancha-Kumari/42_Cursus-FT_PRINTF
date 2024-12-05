@@ -14,11 +14,11 @@
 
 void	ft_putptr(unsigned long val, int *count)
 {
-    if(!val)
-        ft_putstr("(nil)", count);
-    else
-    {
-        ft_putstr("0x", count);
-	    ft_puthex(val, 'x', count);
-    }
+	if (!val)
+		ft_putstr("(nil)", count);
+	else
+	{
+		ft_putstr("0x", count);
+		ft_puthex(val, 'x', count);
+	}
 }
