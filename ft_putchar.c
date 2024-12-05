@@ -6,7 +6,7 @@
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:52:38 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/22 09:23:39 by akumari          ###   ########.fr       */
+/*   Updated: 2024/12/05 11:12:07 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putchar(int c, int *count)
 {
-	write(1, &c, 1);
-	(*count)++;
+	if (write(1, &c, 1) == -1)
+		*count = -1;
+	else
+		(*count)++;
 }
