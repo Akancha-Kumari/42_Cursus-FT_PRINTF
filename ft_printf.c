@@ -6,7 +6,7 @@
 /*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:41:13 by akumari           #+#    #+#             */
-/*   Updated: 2024/12/05 10:06:16 by akumari          ###   ########.fr       */
+/*   Updated: 2024/12/09 14:39:01 by akumari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ static void	ft_type(const char *format, int *i, va_list arg, int *count)
 		ft_putunbr(va_arg(arg, unsigned int), count);
 	else if (format[*i] == 'x' || format[*i] == 'X')
 		ft_puthex(va_arg(arg, unsigned int), format[*i], count);
+	else
+	{
+		ft_putstr("Invalid Specifier: %", count);
+		ft_putchar(format[*i], count);
+		*count = -1;
+	}
 }
 
 int	ft_printf(const char *format, ...)
@@ -39,7 +45,7 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	count = 0;
 	va_start(arg, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && count != -1)
 	{
 		if (format[i] == '%')
 		{
